@@ -11,7 +11,7 @@ class Polynomial {
       }
 
       public Polynomial add(Polynomial arg){
-            double[] longer, shorter;
+            double[] longer, shorter, result;
             if(arg.coef.length > this.coef.length){
                   longer = arg.coef;
                   shorter = this.coef;
@@ -20,11 +20,14 @@ class Polynomial {
                   longer = this.coef;
                   shorter = arg.coef;
             }
+            int len = longer.length;
             int cap = shorter.length;
-            for(int i = 0; i < cap; i++){
-                  longer[i] = longer[i] + shorter[i];
+            result = new double[len];
+            for(int i = 0; i < len; i++){
+                  result[i] = longer[i];
+                  if(i < cap) result[i] += shorter[i];
             }
-            return new Polynomial(longer);
+            return new Polynomial(result);
       }
 
       public double evaluate(double arg){
