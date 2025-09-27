@@ -57,7 +57,7 @@ class Polynomial {
     			 else {
     				 coef[i] = Double.parseDouble(splitted[0]);
     			 }    			 
-    			 if(splitted[1].length() == 1) { //case x^1
+    			 if(splitted[1].length() == 1) { 
     				 expo[i] = 1;
     			 } 
     			 else {
@@ -177,9 +177,6 @@ class Polynomial {
         		  if(expo[i] == 1) result += "x";
         		  else if (expo[i] > 1) result += "x" + Integer.toString(expo[i]);
         	  }
-    	  }
-    	  else {
-    		  result = "0";
     	  }
 //    	  System.out.println(result);
     	  try {
