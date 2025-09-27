@@ -173,7 +173,7 @@ class Polynomial {
     		  int len = this.expo.length;    	  
         	  for(int i=0; i<len; i++) {
         		  if(this.coef[i]>0 && i>0) result += "+";
-        		  if(coef[i] != 1) result += Double.toString(coef[i]);    				  
+        		  if(coef[i] != 1 || (coef[i] == 1 && expo[i]==0)) result += Double.toString(coef[i]);    				  
         		  if(expo[i] == 1) result += "x";
         		  else if (expo[i] > 1) result += "x" + Integer.toString(expo[i]);
         	  }
