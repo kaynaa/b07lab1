@@ -4,13 +4,14 @@ public class Driver {
     public static void main(String [] args) {
     
     
-//    File f = new File("C:\\Users\\----\\CSCB07\\testcases.txt");
+//    File f = new File("C:\\Users\\---CSCB07\\testcases.txt");
 //    Polynomial p = new Polynomial(f);
     	
     Polynomial p = new Polynomial();
     p.saveToFile("saveToFileResults.txt");
+    System.out.println(3);
     
-    int[] arr = {0, 1, 2, 3};
+    int[] arr = {0, 2, 1, 3};
     double[] arr2 = {1, -3.5, -1.9, 3};
     Polynomial p2 = new Polynomial(arr2, arr);
     

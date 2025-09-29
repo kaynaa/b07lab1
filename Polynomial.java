@@ -25,6 +25,7 @@ class Polynomial {
     		  poly = readFile.nextLine();
     	  } catch(FileNotFoundException e){
     		  System.out.println("Error");
+    		  e.printStackTrace();
     	  }
     	  
     	  if(poly == "" || poly == "0") {
@@ -43,10 +44,15 @@ class Polynomial {
     		 if(splitted.length == 1) {
     			 if(terms[i].indexOf('x')!=-1) {
     				 coef[i] = 1;
-    				 expo[i] = Integer.parseInt(splitted[0].replace("x", ""));
+    				 if(splitted[0].replace("x", "").length() == 0) {
+    					 expo[i] = 1;
+    				 }
+    				 else {    					 
+    					 expo[i] = Integer.parseInt(splitted[0].replace("x", ""));
+    				 }
     			 }
     			 else {
-    				 coef[i] = Integer.parseInt(splitted[0]);
+    				 coef[i] = Double.parseDouble(splitted[0]);
     				 expo[i]=0;
     			 }
     		 }
@@ -173,12 +179,12 @@ class Polynomial {
     		  int len = this.expo.length;    	  
         	  for(int i=0; i<len; i++) {
         		  if(this.coef[i]>0 && i>0) result += "+";
-        		  if(coef[i] != 1 || (coef[i] == 1 && expo[i]==0)) result += Double.toString(coef[i]);    				  
+        		  result += Double.toString(coef[i]);    				  
         		  if(expo[i] == 1) result += "x";
         		  else if (expo[i] > 1) result += "x" + Integer.toString(expo[i]);
         	  }
     	  }
-//    	  System.out.println(result);
+    	  System.out.println(result);
     	  try {
         	  FileWriter writeFile = new FileWriter(filename);
         	  writeFile.write(result);
