@@ -184,7 +184,7 @@ class Polynomial {
         		  else if (expo[i] > 1) result += "x" + Integer.toString(expo[i]);
         	  }
     	  }
-    	  System.out.println(result);
+//    	  System.out.println(result);
     	  try {
         	  FileWriter writeFile = new FileWriter(filename);
         	  writeFile.write(result);
